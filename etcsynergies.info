@@ -1,0 +1,26 @@
+; $Id: giordani.info,v 1.1 2008/06/20 08:42:56 lioz Exp $
+
+name = ETC Synergies
+
+description = Marinelli based theme by Monica
+
+version = VERSION
+
+core = 6.x
+
+engine = phptemplate
+
+stylesheets[all][] = layout.css
+stylesheets[all][] = graphics.css
+stylesheets[all][] = typography.css
+stylesheets[all][] = links.css
+
+base theme = marinelli
+
+
+; Information added by drupal.org packaging script on 2009-08-25
+version = "6.x-2.96"
+core = "6.x"
+project = "marinelli"
+datestamp = "1251185475"
+
