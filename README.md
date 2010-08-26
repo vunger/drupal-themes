@@ -1,6 +1,3 @@
-# drupal-themes
+# mifo_theme_acquia_marina
 
-Drupal themes built or customized by the Electronic Text Centre, UNB Libraries.
-
-## More details go here.
-
+Current custom theme used for http://www.forestoperations.org (MIFO). Theme was previously ported from acquia_marina.

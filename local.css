@@ -1,0 +1,166 @@
+/* $Id: local_sample.css,v 1.2.2.2 2009/12/22 06:47:47 jwolf Exp $ */
+
+/* Local CSS
+-------------------------------------------------------------- */
+
+/**
+ * Put your custom css and css overrides in this file and
+ * rename it local.css. By restricting your css changes 
+ * to local.css, your changes will not be overwritten when
+ * upgrading to a new version of this theme.
+ *
+ *  Steps to activate local.css:
+ *  1. Add your custom css to this file.
+ *  2. Rename this file to local.css  
+ */
+
+
+/***************/
+/* Themes Added For Pages */
+/***************/
+
+#content caption {
+        caption-side: bottom;
+        font-style: italic;
+        background-color: inherit;
+}
+
+#content div.equation {
+        text-align:center;
+                margin: 20px;
+        padding: 0;
+}
+
+#content div.contentdatatable {
+        text-align:center;
+        margin: 20px;
+        padding: 0;
+}
+
+#content table.datatable {
+        margin: 0 auto;
+        text-align:left;
+}
+
+#content .contentcenteredimage {
+        margin: 25px;
+        padding: 0;
+        text-align: center;
+}
+
+#content .contentcenteredimage img{
+        border: 1px solid #BBBBBB;
+        margin:0 auto;
+}
+
+#content .contentcenteredimagecaption {
+        font-style: italic;
+}
+#content .contentorderedlist ol{
+        margin:0 auto;
+}
+
+#content .contentcenteredvideo {
+        margin: 25px;
+        padding: 0;
+        text-align: center;
+}
+
+#content .contentcenteredvideo object{
+        margin: 0 auto;
+        border: 1px solid #BBBBBB;
+}
+
+
+#block-block-3 div.block-icon {
+  background: transparent url('icons/tnt_icon_05.png') no-repeat left center;
+}
+
+#block-block-1 div.block-icon {
+  background: transparent url('icons/tnt_icon_10.png') no-repeat left center;
+}
+
+
+
+.gallery-list li {
+  float: left;
+  width: 24%;
+  /* min-height: 190px; */
+}
+
+.gallery-list ul li
+{
+	background: none;
+	text-align:center;
+}
+
+
+.gallery-images-list {
+	overflow: hidden; /* clear floats */
+}
+
+
+.gallery-images-list ul {
+}
+
+.gallery-images-list li {
+	float: left;
+	width: 20%;
+	/* min-height: 190px; */
+	text-align: center;
+       	background: none !important;
+}
+
+.gallery-images-list .image-thumbnail a {
+	display: block;
+	text-align: center;
+}
+
+.gallery-images-list .image-thumbnail img {
+	margin: 5px;
+}
+
+.gallery-list .meta{
+  display: none;
+}
+
+.views-field-title {
+  display: none;
+}
+
+.field-field-permissions {
+	  display: none;
+}
+
+.field-field-copyright {
+          display: none;
+}
+
+.teaser .comment_add {
+display: none;
+}
+
+.block-wrapper #search-form #edit-keys {
+	width:120px;
+	margin:-20px 0 0 0;
+}
+
+#search-form-1 #edit-keys-1 {
+        width:120px;
+}
+
+.block-wrapper #search-form .form-item label{
+display: none;
+}
+
+div.equation p {
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+}
+
+div.specificequationcontainer {
+	text-align:left;
+	margin: 0 auto 0 auto;
+}
