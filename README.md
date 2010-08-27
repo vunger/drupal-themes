@@ -1,3 +1,3 @@
-# drupal-themes
+# skymall
 
-This repository is contains Drupal themes built or customized by the Electronic Text Centre, UNB Libraries. The master repository, however, contains no data. All themes are tracked and contained within their own specific branches of this repository.
+Current custom theme used for [http://vre.lib.unb.ca/acva/contestedterrain/](http://vre.lib.unb.ca/acva/contestedterrain/).
