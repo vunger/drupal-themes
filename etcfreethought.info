@@ -1,0 +1,13 @@
+name = etcfreethought
+description = Theme for Freethought Today - Sub-theme based on 'sky'.
+core = 6.x
+base theme = sky
+
+; Regions
+regions[left] = Left sidebar
+regions[right] = Right sidebar
+regions[contenttop] = Content top
+regions[contentbottom] = Content bottom
+regions[contentfooter] = Content footer
+
+stylesheets[all][] = etcfreethought.css
