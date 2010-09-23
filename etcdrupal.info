@@ -1,0 +1,13 @@
+name = ETC Drupal
+
+description = Sky based theme by Jake
+
+version = VERSION
+
+core = 6.x
+
+engine = phptemplate
+
+stylesheets[all][] = style.css
+
+base theme = sky
