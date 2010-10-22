@@ -83,7 +83,6 @@
             <?php print $content; ?>
           </div>
           <!-- END CONTENT -->
-          <?php print $feed_icons; ?>
           <?php if ($contentbottom): ?>
             <div id="content-bottom"><?php print $contentbottom; ?></div>
           <?php endif; ?>
