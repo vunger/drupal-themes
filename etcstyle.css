@@ -1,0 +1,124 @@
+#wrapper {
+  margin-top:10px;
+  min-height:400px;
+  margin-bottom:50px;
+}
+
+#preheader {
+  background: #fff;
+  border: 1px solid #999;
+  border-bottom: solid 2px #095f95;
+  margin:0px;
+  padding:0px;
+  height: 28px;
+}
+
+#header {
+  background: #3A4E6A url('images/header_top2.jpg') no-repeat;
+  height: 71px !important;
+}
+
+#header #logo img {
+  margin: 15px;
+}
+
+#footer {
+  background: rgb(53,53,53);
+  border: 1px solid #999;
+  border-bottom: solid 2px #095f95;
+  min-height: 28px;
+  padding:0px;
+  margin:0px;
+}
+
+#footer-inner {
+  background: rgb(53,53,53);
+  /* @todo: adjust padding */
+}
+
+#prenavigation ul {
+  line-height: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 998;
+  opacity: 1.00; /* Fixes bug FF2 with Superfish menus */
+  border: none;
+  position: relative;
+}
+
+#prenavigation li {
+  color:#095f95;
+  font-weight:bold;
+  float: right;
+  margin-right:15px;
+}
+
+#footernavigation ul {
+  line-height: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 998;
+  opacity: 1.00; /* Fixes bug FF2 with Superfish menus */
+  border: none;
+  position: relative;
+}
+
+#footernavigation li {
+  color:#FFF;
+  font-weight:bold;
+  float: right;
+  margin-right:15px;
+}
+
+#footernavigation a,
+#footernavigation a:visited {
+  color:#FFF;
+  font-weight:bold;
+}
+
+#navigation {
+  background: #fff url('images/header_bottom.jpg') no-repeat;
+  height: 28px;
+}
+
+#navigation ul {
+  line-height: 28px;
+  opacity: 1.000; /* Fixes bug FF2 with Superfish menus */
+}
+
+#navigation li {
+  float: right;
+}
+
+/* @todo: check a.active vs a:active */
+
+#navigation a,
+#navigation a:visited,
+#navigation a:active {
+  /* @todo: check background */
+  background: none;
+  color: #fff;
+  /* @todo: check shadow */
+  text-shadow: none;
+}
+
+#navigation .active-trail a,
+#navigation .active-trail a:active {
+  color: #FFF;
+}
+
+.block h3.title {
+  color: #aa0f0f;
+}
+
+.block .content {
+  color:#095f95;
+  font-weight:bold;
+}
+
+#block-block-3 ul,
+#block-block-2 ul {
+  margin-left:10px;
+}
