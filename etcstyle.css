@@ -14,7 +14,7 @@
 }
 
 #header {
-  background: #3A4E6A url('images/header_top2.jpg') no-repeat;
+  background: #3A4E6A url('images/header_top2.jpg') no-repeat top left !important;
   height: 71px !important;
 }
 
@@ -79,7 +79,7 @@
 }
 
 #navigation {
-  background: #fff url('images/header_bottom.jpg') no-repeat;
+  background: #fff url('images/header_bottom.jpg') no-repeat bottom left;
   height: 28px;
 }
 
@@ -90,6 +90,7 @@
 
 #navigation li {
   float: right;
+  border-right: none;
 }
 
 /* @todo: check a.active vs a:active */
