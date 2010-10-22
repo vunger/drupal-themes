@@ -33,7 +33,7 @@
 
 #footer-inner {
   background: rgb(53,53,53);
-  /* @todo: adjust padding */
+  padding: .5em 0 1em;
 }
 
 #prenavigation ul {
@@ -97,7 +97,7 @@
 
 #navigation a,
 #navigation a:visited,
-#navigation a:active {
+#navigation a.active {
   /* @todo: check background */
   background: none;
   color: #fff;
@@ -106,7 +106,7 @@
 }
 
 #navigation .active-trail a,
-#navigation .active-trail a:active {
+#navigation .active-trail a.active {
   color: #FFF;
 }
 
