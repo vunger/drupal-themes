@@ -40,9 +40,11 @@
         <?php if ($site_slogan): ?>
           <span id="site-slogan"><?php print $site_slogan; ?></span>
         <?php endif; ?>
-	<div style='float:right; margin:15px;'>
-		<img src=/sites/vre.lib.unb.ca.etc/themes/etcdrupal/images/UNB_logo.png>
-	</div>
+<!--        
+      	<div style='float:right; margin:15px;'>
+      		<img src="/sites/vre.lib.unb.ca.etc/themes/etcdrupal/images/unb-libraries-logo.png"/>
+      	</div>
+-->      	
       </div>
     </div>
     <?php if ($primary_links): ?>
@@ -101,21 +103,12 @@
     </div>
     <!-- END CONTAINER -->
     <div class="push">&nbsp;</div>
-
-  <div id="footer" class="layout-region">
-    <div id="footer-inner">
-      <?php /* print $contentfooter; ?>
-      <?php print $footer_message; */ ?>
-	<?php // if ($footerlinks): ?>
-      		<div id="footernavigation">
-		<ul><li style="float:left; margin-left:15px;">@ University of New Brunswick Libraries</li></ul>
-<?php
-$footermenu = menu_navigation_links('menu-footerlinks', 0);
-print theme('links', $footermenu);
-?></div>
-    	<?php // endif; ?>
+    <div id="footer" class="layout-region">
+      <div id="footer-inner">
+        <?php print $footer; ?>
+        <?php print $footer_message; ?>
+      </div>
     </div>
-
   </div>
   <!-- END WRAPPER -->
   <?php print $closure; ?>
