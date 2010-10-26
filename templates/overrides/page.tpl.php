@@ -61,7 +61,7 @@
       <?php endif; ?>
       <div id="main">
         <div class="main-inner">
-          <?php if ($breadcrumb && $thisdisablesbreadcrumb): ?>
+          <?php if ($breadcrumb): ?>
             <div class="breadcrumb clearfix"><?php print $breadcrumb; ?></div>
           <?php endif; ?>
           <?php if ($show_messages && $messages != ""): ?>
