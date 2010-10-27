@@ -20,16 +20,15 @@
       <?php if ($submitted): ?>
         <p><?php print $submitted; ?></p>
       <?php endif; ?>
-      <?php if ($terms): ?>
-        <div class="terms">
-          <span class="icon">&nbsp;</span>
-          <?php print $terms; ?>
-        </div>
-      <?php endif; ?>
     </div>
   <div class="content clearfix">
     <?php print $content; ?>
   </div>
+  <?php if ($terms): ?>
+    <div class="terms">
+      <?php print $terms; ?>
+    </div>
+  <?php endif; ?>
   <?php if ($links): ?>
     <div class="links">
       <?php print $links; ?>

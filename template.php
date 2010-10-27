@@ -26,6 +26,10 @@ function etcdrupal_preprocess_page(&$vars) {
   }
   
   $vars['head_title'] = implode(' - ', $head_title);
+  
+  // Enforce consistent capitalization
+  // @todo: only needed for taxon terms, put it where it belongs
+  $vars['title'] = ucwords($vars['title']);
 }
 
 /**
@@ -41,11 +45,12 @@ function etcdrupal_node_submitted($node) {
 
 /**
  * Implementation of theme_breadcrumb()
- * Builds breadcrumb trail from automated URL aliases
  */
 function etcdrupal_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-    $breadcrumb[] = drupal_get_title();
+    // Enforce consistent capitalization
+    // @todo: only needed for taxon terms, put it where it belongs
+    $breadcrumb[] = ucwords(drupal_get_title());
     return '<div class="breadcrumb">'. implode(' | ', $breadcrumb) .'</div>';
   }
 }

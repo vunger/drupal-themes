@@ -121,19 +121,13 @@
   color: #FFF;
 }
 
-.block h3.title {
-  color: #aa0f0f;
+/* @group Item Lists */
+
+div.item-list ul li {
+  margin: 0.25em 0;
 }
 
-.block .content {
-  color:#095f95;
-  font-weight:bold;
-}
-
-#block-block-3 ul,
-#block-block-2 ul {
-  margin-left:10px;
-}
+/* @end */
 
 /* @group Teasers */
 
@@ -157,3 +151,9 @@
 }
 /* @end */
 
+/* @group Terms */
+.node .terms {
+  text-align: right;
+}
+
+/* @end */
