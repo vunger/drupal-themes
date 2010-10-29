@@ -165,10 +165,6 @@ div.item-list ul li {
 /* @end */
 
 /* @group Views */
-.block-views .view-publications-list .views-field-field-cover-image-fid {
-  float: right;
-  margin: 0 0 0 10px;
-}
 
 .view-staff-directory td.views-field-title {
   width: 25%;
