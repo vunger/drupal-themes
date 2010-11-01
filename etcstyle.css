@@ -1,3 +1,51 @@
+/* @group reset the reset */
+:focus {
+  outline: #B3B7BE dotted thin;
+}
+/* @end */ 
+
+/* @group Links */
+/* underline text links, highlight on mouseover */
+a,
+a:visited {
+  color: #314C74;
+  text-decoration: underline;
+}
+a:hover,
+a.active {
+  background: none repeat scroll 0 0 #FFFFCC;
+  color: #000000;
+}
+
+/* but not in the header */
+#header a:hover, #header a.active {
+  background: none repeat scroll 0 0 transparent;
+}
+
+/* or in "read more" buttons, etc. */
+.node .links li a, .node .links li a:visited {
+  text-decoration: none;
+}
+.node .links li a:hover, .node .links li a.active {
+  background: none repeat scroll 0 0 transparent;
+}  
+
+/* or in pagers */
+.pager a:hover, .pager a.active {
+  background: none repeat scroll 0 0 transparent;
+}
+
+/* or in the footer */
+#footer a {
+  text-decoration: none;
+}
+
+#footer a:hover, #footer a.active {
+  background: none repeat scroll 0 0 transparent;
+  text-decoration: underline;
+}
+/* @end */
+
 /* @group Layout */
 #wrapper {
   margin-top: 10px;
@@ -71,6 +119,12 @@
 }
 /* @end */
 
+/* @group Headings */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.5px;
+}
+/* @end */
+
 #prenavigation ul {
   line-height: 28px;
   list-style: none;
@@ -104,8 +158,6 @@
   border-right: none;
 }
 
-/* @todo: check a.active vs a:active */
-
 #navigation a,
 #navigation a:visited,
 #navigation a.active {
@@ -120,6 +172,20 @@
 #navigation .active-trail a.active {
   color: #FFF;
 }
+
+/* @group More Links */
+.more-link a {
+  color: #888;
+  text-decoration: none;
+}
+.more-link a:hover {
+  color: #555;
+  background: none repeat scroll 0 0 transparent;
+}
+.more-link span.icon {
+  background: transparent url('images/sprites-sky.png') no-repeat 0 -1023px;
+}
+/* @end */
 
 /* @group Item Lists */
 
