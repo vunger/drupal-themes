@@ -32,7 +32,7 @@
     <div<?php print $header_attributes; ?>>
       <div id="header-inner">
         <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>" id="logo"><img src="<?php print $logo; ?>" alt="<?php if ($site_name): print $site_name;  endif; ?>" /></a>
+        <a href="<?php print $front_page; ?>" title="<?php print variable_get('site_name', ''); ?>" id="logo"><img src="<?php print $logo; ?>" alt="<?php print variable_get('site_name', ''); ?>" /></a>
         <?php endif; ?>
         <?php if ($site_name): ?>
         <span id="site-name"> <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>"><?php print $site_name; ?></a> </span>

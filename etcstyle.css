@@ -137,8 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #prenavigation li {
-  color:#095f95;
-  font-weight:bold;
+  color: #095f95;
   float: right;
   margin-right:15px;
 }
