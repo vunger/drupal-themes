@@ -1,0 +1,21 @@
+.expander0 .by { display: none; }
+
+#brand {
+	background: none;
+}
+
+#navlist.links a, #navlinks ul li a {
+	font-family: sans-serif, Arial, Verdana, Helvetica;
+}
+
+/* ****************************************************************************
+ * Views
+ * ************************************************************************* */
+
+.views-exposed-widgets {
+  max-width: 690px;
+}
+
+.form-select {
+  max-width: 460px;
+}

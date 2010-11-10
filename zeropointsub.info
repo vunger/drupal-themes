@@ -1,0 +1,18 @@
+name = 0 Point Subtheme
+description = 0 Point Subtheme
+version = 6.x-dev
+core = 6.x
+engine = phptemplate
+base theme = zeropoint
+
+stylesheets[all][] = zeropointsub.css
+
+regions[left] = Left sidebar
+regions[right] = Right sidebar
+regions[above] = Above
+regions[banner] = Banner
+regions[header] = Header
+regions[content_top] = Top content
+regions[content_middle] = Middle content
+regions[content_bottom] = Bottom content
+regions[below] = Below
