@@ -68,11 +68,22 @@
  */
 function atlanticportal_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
-  // Add your theme hooks like this:
-  /*
-  $hooks['hook_name_here'] = array( // Details go here );
-  */
-  // @TODO: Needs detailed comments. Patches welcome!
+
+  $hooks['biblio_entry'] = array(
+    'arguments' => array('node' => NULL, $base => '', $style => '', $inline => FALSE),
+    'file'      => 'overrides/biblio-overrides.inc'
+  );
+  
+  $hooks['biblio_export_links'] = array(
+    'arguments' => array('node' => NULL),
+    'file'      => 'overrides/biblio-overrides.inc',
+  );
+
+  $hooks['biblio_openurl'] = array(
+    'arguments' => array('node' => NULL),
+    'file'      => 'overrides/biblio-overrides.inc',
+  );
+
   return $hooks;
 }
 
