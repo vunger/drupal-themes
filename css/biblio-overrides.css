@@ -36,7 +36,12 @@ div.biblio-links ul li {
   margin: 0 0.25em;
 }
 
-/* Node view */
+/* Node view: tabular display of Biblio node */
+div#biblio-node td {
+  padding: .25em 2em .25em 1em;
+}
+
+/* Node view: export & search links */
 .node div.biblio-links {
   text-align: left;
   margin: 1em 0;
