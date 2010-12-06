@@ -68,9 +68,9 @@
  */
 function atlanticportal_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
-
+  
   $hooks['biblio_entry'] = array(
-    'arguments' => array('node' => NULL, $base => '', $style => '', $inline => FALSE),
+    'arguments' => array('node' => NULL, 'base' => '', 'style' => '', 'inline' => FALSE),
     'file'      => 'overrides/biblio-overrides.inc'
   );
   
@@ -123,18 +123,22 @@ function STARTERKIT_preprocess_page(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_node(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
-
-  // Optionally, run node-type-specific preprocess functions, like
+function atlanticportal_preprocess_node(&$vars, $hook) {
+  // Look for node-type-specific preprocess functions
   // STARTERKIT_preprocess_node_page() or STARTERKIT_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $vars['node']->type;
-  if (function_exists($function)) {
-    $function($vars, $hook);
+  
+  // When #341140 is fixed, replace _zen_path() with drupal_get_path().
+  $preprocess_file = './' . _atlanticportal_path() . '/preprocess/node-'. $vars['node']->type . '.inc';
+  
+  if (file_exists($preprocess_file)) {
+    include_once $preprocess_file;
+    
+    $function = __FUNCTION__ . '_' . $vars['node']->type;
+    if (function_exists($function)) {
+      $function($vars, $hook);
+    }
   }
 }
-// */
 
 /**
  * Override or insert variables into the comment templates.
@@ -163,3 +167,20 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+/**
+ * Returns the path to the Atlantic Portal theme.
+ *
+ * drupal_get_filename() is broken; see #341140. When that is fixed in Drupal 6,
+ * replace _atlanticportal_path() with drupal_get_path('theme', 'atlanticportal').
+ */
+function _atlanticportal_path() {
+  static $path = FALSE;
+  if (!$path) {
+    $matches = drupal_system_listing('atlanticportal\.info$', 'themes', 'name', 0);
+    if (!empty($matches['atlanticportal']->filename)) {
+      $path = dirname($matches['atlanticportal']->filename);
+    }
+  }
+  return $path;
+}

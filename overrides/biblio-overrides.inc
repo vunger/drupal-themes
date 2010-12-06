@@ -59,7 +59,6 @@ function atlanticportal_biblio_entry($node, $base = 'biblio', $style = 'classic'
   return $output;
 }
 
-
 /**
  * Implementation of theme_biblio_export_links
  *
@@ -87,7 +86,7 @@ function atlanticportal_biblio_export_links($node = NULL) {
 
   if (! empty($links)) {
       $link_label =
-        empty($node) ?
+        (empty($node) and $pager_total_items[0]) ?
           t('Export @count results', array('@count' => $pager_total_items[0])) :
           t('Export');
 

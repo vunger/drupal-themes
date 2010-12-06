@@ -17,24 +17,32 @@ a.biblio-openurl-text {
   text-decoration: underline;
 }
 
+/* Biblio view */
 div.biblio-links {
   text-align: right;
   font-size: 90%;
   margin: 1em 0.5em;
 }
 
-ul.biblio-export-buttons, 
-ul.biblio-search-buttons, 
-ul.biblio-view-buttons {
+div.biblio-links ul {
   list-style-type: none;
   display: inline;
   padding-left: 2em;
 }
 
-ul.biblio-export-buttons li,
-ul.biblio-search-buttons li, 
-ul.biblio-view-buttons li {
+div.biblio-links ul li {
   text-align: right;
   display: inline;
   margin: 0 0.25em;
+}
+
+/* Node view */
+.node div.biblio-links {
+  text-align: left;
+  margin: 1em 0;
+}
+
+.node div.biblio-links ul {
+  padding: 0;
+  margin: 0 2em 0 0;
 }
