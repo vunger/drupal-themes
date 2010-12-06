@@ -15,8 +15,11 @@
 function atlanticportal_biblio_entry($node, $base = 'biblio', $style = 'classic', $inline = false) {
   $output  = '<div class="biblio-entry">';
 
-  // first add the styled entry...
-  $output .= theme('biblio_style', $node, $base, $style, $inline);
+  // Wrap the text of the styled entry in tags so we can style it.
+  $output .= 
+    '<div class="biblio-entry-text">' . 
+    theme('biblio_style', $node, $base, $style, $inline) .
+    '</div>';
   
   // any annotations?
   $annotation_field = variable_get('biblio_annotations', 'none');

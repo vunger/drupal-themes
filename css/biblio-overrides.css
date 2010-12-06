@@ -1,0 +1,40 @@
+.biblio-entry {
+  border-bottom: 1px dotted #E1E1E1;
+}
+
+.biblio-category-section > .biblio-entry:last-of-type {
+  border-bottom: none;
+}
+
+.biblio-entry-text {
+  margin: 1em 0.5em 0.5em;
+}
+
+a.biblio-openurl-text {
+  /* undo oddness in biblio module styling */
+  float: none;
+  text-align: inherit;
+  text-decoration: underline;
+}
+
+div.biblio-links {
+  text-align: right;
+  font-size: 90%;
+  margin: 1em 0.5em;
+}
+
+ul.biblio-export-buttons, 
+ul.biblio-search-buttons, 
+ul.biblio-view-buttons {
+  list-style-type: none;
+  display: inline;
+  padding-left: 2em;
+}
+
+ul.biblio-export-buttons li,
+ul.biblio-search-buttons li, 
+ul.biblio-view-buttons li {
+  text-align: right;
+  display: inline;
+  margin: 0 0.25em;
+}
