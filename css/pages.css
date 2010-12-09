@@ -19,6 +19,8 @@ body {
 }
 
 #page-wrapper {
+  border-top: 3px solid #003399;
+  padding-top: 10px;
 }
 
 #page {
@@ -71,6 +73,7 @@ body {
 }
 
 #name-and-slogan /* Wrapper for website name and slogan */ {
+  margin: 0 0 25px 50px;
 }
 
 h1#site-name,

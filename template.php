@@ -71,17 +71,17 @@ function atlanticportal_theme(&$existing, $type, $theme, $path) {
   
   $hooks['biblio_entry'] = array(
     'arguments' => array('node' => NULL, 'base' => '', 'style' => '', 'inline' => FALSE),
-    'file'      => 'overrides/biblio-overrides.inc'
+    'file'      => './' . _atlanticportal_path() . '/overrides/biblio.inc'
   );
   
   $hooks['biblio_export_links'] = array(
     'arguments' => array('node' => NULL),
-    'file'      => 'overrides/biblio-overrides.inc',
+    'file'      => './' . _atlanticportal_path() . '/overrides/biblio.inc',
   );
 
   $hooks['biblio_openurl'] = array(
     'arguments' => array('node' => NULL),
-    'file'      => 'overrides/biblio-overrides.inc',
+    'file'      => './' . _atlanticportal_path() . '/overrides/biblio.inc',
   );
 
   return $hooks;
@@ -167,6 +167,30 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+function atlanticportal_preprocess_search_theme_form(&$vars) {
+  // Remove title displayed on textfield mouseover
+  unset($vars['form']['search_theme_form']['#attributes']['title']);
+  
+  // Get a language-appropriate default value for the search box
+  $default_text = t('Search');
+
+  // Set the default value:
+  $vars['form']['search_theme_form']['#value'] = $default_text;
+  
+  // .. and add handlers to clear the default on blur/focus
+  $vars['form']['search_theme_form']['#attributes'] = array(
+    'onblur'  => "clearInput('edit-search-theme-form-1', '$default_text')",
+    'onfocus' => "clearInput('edit-search-theme-form-1', '$default_text')",
+  );
+  
+  // Re-render the textfield
+  unset($vars['form']['search_theme_form']['#printed']);
+  $vars['search']['search_theme_form'] = drupal_render($vars['form']['search_theme_form']);
+
+  // Collect all form elements to print entire form
+  $vars['search_form'] = implode($vars['search']);
+}
 
 /**
  * Returns the path to the Atlantic Portal theme.
