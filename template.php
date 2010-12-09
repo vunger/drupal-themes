@@ -130,9 +130,12 @@ function STARTERKIT_preprocess_page(&$vars, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function atlanticportal_preprocess_node(&$vars, $hook) {
-  // Look for node-type-specific preprocess functions
-  // STARTERKIT_preprocess_node_page() or STARTERKIT_preprocess_node_story().
+  // First, preprocessing that applies to all node types
   
+  // Better date format
+  $vars['date'] = format_date($vars['node']->created, 'custom', 'j F Y');
+  
+  // Next, run node-type-specific preprocess functions
   // When #341140 is fixed, replace _zen_path() with drupal_get_path().
   $preprocess_file = './' . _atlanticportal_path() . '/preprocess/node-'. $vars['node']->type . '.inc';
   
