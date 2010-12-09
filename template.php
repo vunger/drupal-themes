@@ -69,6 +69,12 @@
 function atlanticportal_theme(&$existing, $type, $theme, $path) {
   $hooks = zen_theme($existing, $type, $theme, $path);
   
+  $hooks['breadcrumb'] = array(
+    'arguments' => array('breadcrumb' => ''),
+  );
+  
+  /* Biblio module theme functions */
+  
   $hooks['biblio_entry'] = array(
     'arguments' => array('node' => NULL, 'base' => '', 'style' => '', 'inline' => FALSE),
     'file'      => './' . _atlanticportal_path() . '/overrides/biblio.inc'
@@ -83,7 +89,7 @@ function atlanticportal_theme(&$existing, $type, $theme, $path) {
     'arguments' => array('node' => NULL),
     'file'      => './' . _atlanticportal_path() . '/overrides/biblio.inc',
   );
-
+  
   return $hooks;
 }
 
@@ -168,6 +174,56 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
 }
 // */
 
+/**
+ * Return a themed breadcrumb trail.  Long page titles, 
+ * if displayed in trail, are truncated to a maximum length.
+ *
+ * @param $breadcrumb
+ *   An array containing the breadcrumb links.
+ * @return
+ *   A string containing the breadcrumb output.
+ */
+function atlanticportal_breadcrumb($breadcrumb) {
+  // Determine if we are to display the breadcrumb.
+  $show_breadcrumb = theme_get_setting('zen_breadcrumb');
+  if ($show_breadcrumb == 'yes' || $show_breadcrumb == 'admin' && arg(0) == 'admin') {
+
+    // Optionally get rid of the homepage link.
+    $show_breadcrumb_home = theme_get_setting('zen_breadcrumb_home');
+    if (!$show_breadcrumb_home) {
+      array_shift($breadcrumb);
+    }
+
+    // Return the breadcrumb with separators.
+    if (!empty($breadcrumb)) {
+      $breadcrumb_separator = theme_get_setting('zen_breadcrumb_separator');
+      $trailing_separator = $title = '';
+      if (theme_get_setting('zen_breadcrumb_title')) {
+        if ($title = drupal_get_title()) {
+          if (theme_get_setting('atlanticportal_breadcrumb_maxlength')) {
+            $title = truncate_utf8($title, theme_get_setting('atlanticportal_breadcrumb_maxlength'), TRUE, TRUE);
+          }
+          $trailing_separator = $breadcrumb_separator;
+        }
+      }
+      elseif (theme_get_setting('zen_breadcrumb_trailing')) {
+        $trailing_separator = $breadcrumb_separator;
+      }
+      return '<div class="breadcrumb">' . implode($breadcrumb_separator, $breadcrumb) . "$trailing_separator$title</div>";
+    }
+  }
+  // Otherwise, return an empty string.
+  return '';
+}
+
+
+
+/**
+ * Restyle the theme-configurable search box
+ *
+ * @param $vars
+ *  An array of variables to pass to the theme template
+ */
 function atlanticportal_preprocess_search_theme_form(&$vars) {
   // Remove title displayed on textfield mouseover
   unset($vars['form']['search_theme_form']['#attributes']['title']);
@@ -197,6 +253,8 @@ function atlanticportal_preprocess_search_theme_form(&$vars) {
  *
  * drupal_get_filename() is broken; see #341140. When that is fixed in Drupal 6,
  * replace _atlanticportal_path() with drupal_get_path('theme', 'atlanticportal').
+ *
+ * @return string
  */
 function _atlanticportal_path() {
   static $path = FALSE;

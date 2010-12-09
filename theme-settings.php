@@ -25,15 +25,24 @@ function atlanticportal_settings($saved_settings) {
    * Create the form using Forms API: http://api.drupal.org/api/6
    */
   $form = array();
-  /* -- Delete this line if you want to use this setting
+  
+  // @fixme Hacky.  Redo Zen breadcrumb settings?
+  $form['atlanticportal_breadcrumb_maxlength'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Truncate title breadcrumb'),
+    '#description'   => t('Numeric value. Truncates on word boundary, adds ellipsis.'),
+    '#default_value' => $settings['atlanticportal_breadcrumb_maxlength'],
+    '#size'          => 5,
+    '#maxlength'     => 5,
+  );
+/*  
   $form['atlanticportal_example'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Use this sample setting'),
     '#default_value' => $settings['atlanticportal_example'],
     '#description'   => t("This option doesn't do anything; it's just an example."),
   );
-  // */
-
+*/
   // Add the base theme's settings.
   $form += zen_settings($saved_settings, $defaults);
 
