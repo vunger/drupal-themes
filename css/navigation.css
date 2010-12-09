@@ -17,6 +17,30 @@ li a.active {
  * Navigation bar
  */
 #navigation {
+  background: none repeat scroll 0 0 #003399;
+}
+
+#navigation li {
+  padding: 6px 0 8px;
+}
+
+
+#navigation li a {
+  color: #EEEEEE;
+  text-decoration: none;
+  padding: 6px 15px 8px;
+}  
+
+#navigation li.first a {
+  margin-left: 50px;
+}
+
+#navigation li.active a {
+  background: none repeat scroll 0 0 #001A4F;
+}
+
+#navigation li a:hover {
+  background: none repeat scroll 0 0 #001A4F;
 }
 
 .region-navigation {
