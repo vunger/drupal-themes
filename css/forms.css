@@ -59,6 +59,24 @@
 #search-box /* Wrapper for the search form */ {
 }
 
+/* @todo style all inputs this way? see forms.css */
+#search-box input {
+  border: 1px solid #CCCCCC;
+  padding-left: 0;
+}
+
+#search-box #edit-search-theme-form-1 {
+  background: url('../images/search_grey.gif') no-repeat scroll 0 center transparent;
+  color: #CCCCCC;
+  margin-right: 20px;
+  padding: 2px 0 2px 17px;
+  width: 135px;
+}
+
+#search-box #edit-search-theme-form-1:hover {
+  color: #000000;
+}
+
 #edit-search-theme-form-1-wrapper label /* Label that says "Search this site:" */ {
   display: none;
 }

@@ -97,6 +97,19 @@ div#site-name /* The name of the website */ {
 #site-slogan /* The slogan (or tagline) of a website */ {
 }
 
+#language-links {
+  margin: 0 20px 10px;
+  font-size: .8em;
+}
+
+#language-links li {
+  padding: 0 0 0 5px;
+  border-left: 1px solid #888888;
+}
+
+#language-links li.first {
+  border: none;
+}
 .region-header /* Wrapper for any blocks placed in the header region */ {
 }
 

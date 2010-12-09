@@ -115,11 +115,12 @@ function STARTERKIT_preprocess(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function STARTERKIT_preprocess_page(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+function atlanticportal_preprocess_page(&$vars, $hook) {
+  // Minimal set of language-switcher links uses less space
+  // than the Locale-provided Block
+  $vars['language_links'] = _atlanticportal_language_links();
 }
-// */
+
 
 /**
  * Override or insert variables into the node templates.
@@ -249,6 +250,45 @@ function atlanticportal_preprocess_search_theme_form(&$vars) {
 
   // Collect all form elements to print entire form
   $vars['search_form'] = implode($vars['search']);
+}
+
+/**
+ *  Build & theme language selection links to add to page template.
+ *  Derived from locale.inc:local_block($op, $delta)
+ *
+ * @return string
+ *   Themed language links as string.
+ */
+function _atlanticportal_language_links() {
+  // Only build links if we have at least two languages and language dependent
+  // web addresses, so we can actually link to other language versions.
+  $language_links = '';
+  
+  if (variable_get('language_count', 1) > 1 && 
+      variable_get('language_negotiation', LANGUAGE_NEGOTIATION_NONE) != LANGUAGE_NEGOTIATION_NONE) {
+  
+    $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+    $languages = language_list('enabled');
+    $links = array();
+    
+    foreach ($languages[1] as $language) {
+      $links[$language->language] = array(
+        'href'       => $path,
+        'title'      => $language->native,
+        'language'   => $language,
+        'attributes' => array('class' => 'language-link'),
+      );
+    }
+
+    // Allow modules to provide translations for specific links.
+    // A translation link may need to point to a different path or use
+    // a translated link text before going through l(), which will just
+    // handle the path aliases.
+    drupal_alter('translation_link', $links, $path);
+    $language_links = theme('links', $links, array('class' => 'links inline'));
+  }
+
+  return $language_links;
 }
 
 /**

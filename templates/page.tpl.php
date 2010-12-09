@@ -127,6 +127,9 @@
   <div id="page-wrapper"><div id="page">
 
     <div id="header"><div class="section clearfix">
+      <?php if ($language_links): ?>
+        <div id="language-links"><?php print $language_links; ?></div>
+      <?php endif; ?>
 
       <?php if ($search_box): ?>
         <div id="search-box"><?php print $search_box; ?></div>
