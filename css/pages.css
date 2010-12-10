@@ -151,6 +151,22 @@ h3.title /* Comment title */ {
   margin: 0;
 }
 
+#content h1 {
+  margin-bottom: 20px;
+}
+
+#content h1.node-title, #content h2 {
+  border-bottom: 2px dotted #AAAAAA;
+  margin-bottom: 15px;
+}
+#content h1.node-title, #content h2.title {
+  margin-bottom: 5px;
+}
+
+h2 a:link, h2 a:visited {
+  text-decoration: none;
+}
+
 tr.even /* Some tables have rows marked even or odd. */ {
   /* background-color: #eee; */ /* Drupal core uses a #eee background */
 }

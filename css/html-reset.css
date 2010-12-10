@@ -37,8 +37,8 @@ body {
    */
 
   /* Use a 12px base font size with a 16px line height */
-  font-size: 0.75em; /* 16px x .75 = 12px */
-  line-height: 1.333em; /* 12px x 1.333 = 16px */
+  /* font-size: 0.75em; /* 16px x .75 = 12px */
+  /* line-height: 1.333em; /* 12px x 1.333 = 16px */
 
   /* Use a 14px base font size with a 18px line height */
   font-size: 0.875em; /* 16px x .875 = 14px */
@@ -76,10 +76,10 @@ fieldset {
   font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
 
   font-family: "Courier New", "DejaVu Sans Mono", monospace;
-
    */
 
-  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  /* font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif; */
+  font-family: "Helvetica Neue Light", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 }
 
 pre,
@@ -125,6 +125,10 @@ h6 {
   line-height: 1.3em;
   margin-top: 0.909em; /* Equivalent to 1em in the page's base font: 1 / 1.1 = 0.909 */
   margin-bottom: 0.909em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }
 
 /*
@@ -214,6 +218,7 @@ dd {
  * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
  */
 a:link {
+  color: #003399;
 }
 
 a:visited {
@@ -221,9 +226,11 @@ a:visited {
 
 a:hover,
 a:focus {
+  text-decoration: none;
 }
 
 a:active {
+  color: #555555;
 }
 
 /*

@@ -68,6 +68,9 @@
 }
 
 .node .submitted /* The "posted by" information */ {
+  font-size: 0.9em;
+  line-height: 1.875em;
+  margin-bottom: 1em;
 }
 
 .node .terms /* Node terms (taxonomy) */ {
