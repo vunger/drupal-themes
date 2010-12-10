@@ -9,6 +9,7 @@
 
 
 .node /* Node wrapper */ {
+  margin-bottom: 25px;
 }
 
 .node-sticky /* A sticky node (displayed before others in a list) */ {

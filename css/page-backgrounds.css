@@ -28,6 +28,7 @@ body {
 }
 
 #main-wrapper {
+  background: url("../images/sidebar_bg.gif") repeat-y scroll right center transparent;
 }
 
 #main {
