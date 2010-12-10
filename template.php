@@ -119,6 +119,14 @@ function atlanticportal_preprocess_page(&$vars, $hook) {
   // Minimal set of language-switcher links uses less space
   // than the Locale-provided Block
   $vars['language_links'] = _atlanticportal_language_links();
+  
+  // Fetch a language-appropriate footer message, but keep
+  // anything dumped in via the config form
+  // @fixme tags go in a theme function
+  $footer_message = '<div class="section">'. _atlanticportal_footer_message() .'</div>';
+  $footer_message .= '<div class="section">'. $vars['footer_message'] .'</div>';
+  
+  $vars['footer_message'] = $footer_message;
 }
 
 
@@ -289,6 +297,16 @@ function _atlanticportal_language_links() {
   }
 
   return $language_links;
+}
+
+function _atlanticportal_footer_message() {
+  $footer_message = '&copy; ' . format_date(time(), 'custom', 'Y') . ' ';
+  
+  $footer_message .= l(t('Atlantic Canada Portal'), '<front>');
+  $footer_message .= ' / ';
+  $footer_message .= l(t('University of New Brunswick'), 'http://www.unb.ca/');
+  
+  return $footer_message;
 }
 
 /**

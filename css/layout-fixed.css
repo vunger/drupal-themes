@@ -65,6 +65,7 @@ body {
  */
 #main-wrapper {
   position: relative;
+  margin-bottom: 20px;
 }
 
 #main {
