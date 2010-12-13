@@ -275,6 +275,15 @@ ul.links li {
 .region-sidebar-second .section {
 }
 
+.region-sidebar-second .section h2 {
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+
+.region-sidebar-second .section p {
+  font-size: 0.9em;
+}
+
 /*
  * Footer
  */

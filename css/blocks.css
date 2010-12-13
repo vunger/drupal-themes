@@ -20,7 +20,10 @@
 }
 
 .block.even /* Zebra striping independent of each region */ {
+  border-top: 1px solid #CCCCCC;  
+  padding-top: 1em;
 }
+
 
 .region-count-1 /* Incremental count for each block in the region */ {
 }
