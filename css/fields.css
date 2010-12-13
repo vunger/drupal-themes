@@ -40,8 +40,15 @@
 
 
 /*
- * Named fields
+ * Named fields.  Underscores in field name are replaced with dashes.
  */
 
-.field-field-FIELDNAME /* Underscores in field name are replaced with dashes. */ {
+.field-field-thumbnail /* digital_collection */ {
+  width: 110px;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.field-field-thumbnail img {
+  border: 1px solid #777777;
 }

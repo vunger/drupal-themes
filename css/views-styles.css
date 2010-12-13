@@ -5,4 +5,7 @@
  * Views Styling
  */
 
-
+.view-header {
+  /* matches padding between bottom of nav & page/node title */
+  margin-bottom: 25px;
+}
