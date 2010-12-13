@@ -11,6 +11,7 @@
  */
 
 .field /* Wrapper for any CCK field. */ {
+  margin: 1em 0;
 }
 
 .field-type-datetime /* Always use "datetime" when creating new CCK date fields. "date" and "datestamp" are legacy types. */ {
