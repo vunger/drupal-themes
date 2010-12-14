@@ -299,7 +299,18 @@ ul.links li {
 #footer-message /* Wrapper for the footer message from Drupal's "Site information" */ {
 }
 
-#footer-messsage .section /* template_preprocess_page() themes separate messages */ {
+#footer-message .section /* template_preprocess_page() themes separate messages */ {
+  margin: .5em 0;
+}
+
+#footer-message {
+  color: #888888;
+}
+
+#footer-message a:link,
+#footer-message a:visited {
+  color: #888888;
+  text-decoration: none;
 }
 
 .region-footer {

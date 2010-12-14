@@ -123,9 +123,11 @@ function atlanticportal_preprocess_page(&$vars, $hook) {
   // Admin form doesn't allow HTML in footer message. Build a 
   // language-appropriate footer message, and append anything entered
   // via the admin form.
+  // @fixme garbage: tags here & in _atlanticportal_footer_message(), messy.
   $footer_message = _atlanticportal_footer_message();
+  
   if ($vars['footer_message']) {
-    $footer_message .= ' '. $vars['footer_message'];
+    $footer_message .= '<div class="section">'. $vars['footer_message'] .'</div>';
   }
   $vars['footer_message'] = $footer_message;
 }
@@ -301,12 +303,15 @@ function _atlanticportal_language_links() {
 }
 
 function _atlanticportal_footer_message() {
-  $footer_message = '&copy; '. format_date(time(), 'custom', 'Y') . ' ';
+  $footer_message = '<div class="section">&copy; '. format_date(time(), 'custom', 'Y') . ' ';
   
   $footer_message .= l(t('Atlantic Canada Portal'), '<front>');
   $footer_message .= ' / ';
   $footer_message .= l(t('University of New Brunswick'), 'http://www.unb.ca/') . '. ';
-  $footer_message .= t('All rights reserved') .'.';
+  $footer_message .= t('All rights reserved') .'.</div>';
+  
+  // @fixme laaaaazy, fix w/ l() and t()
+  $footer_message .= '<div class="section credits">Managed with <a href="http://drupal.org/">Drupal</a>. Theme based on <a href="http://www.fireandknowledge.org/archives/2007/09/05/blueprint-wordpress-theme/">Blueprint-WP</a>.</div>';
   
   return $footer_message;
 }
