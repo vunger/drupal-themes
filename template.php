@@ -120,12 +120,13 @@ function atlanticportal_preprocess_page(&$vars, $hook) {
   // than the Locale-provided Block
   $vars['language_links'] = _atlanticportal_language_links();
   
-  // Fetch a language-appropriate footer message, but keep
-  // anything dumped in via the config form
-  // @fixme tags go in a theme function
-  $footer_message = '<div class="section">'. _atlanticportal_footer_message() .'</div>';
-  $footer_message .= '<div class="section">'. $vars['footer_message'] .'</div>';
-  
+  // Admin form doesn't allow HTML in footer message. Build a 
+  // language-appropriate footer message, and append anything entered
+  // via the admin form.
+  $footer_message = _atlanticportal_footer_message();
+  if ($vars['footer_message']) {
+    $footer_message .= ' '. $vars['footer_message'];
+  }
   $vars['footer_message'] = $footer_message;
 }
 
@@ -300,11 +301,12 @@ function _atlanticportal_language_links() {
 }
 
 function _atlanticportal_footer_message() {
-  $footer_message = '&copy; ' . format_date(time(), 'custom', 'Y') . ' ';
+  $footer_message = '&copy; '. format_date(time(), 'custom', 'Y') . ' ';
   
   $footer_message .= l(t('Atlantic Canada Portal'), '<front>');
   $footer_message .= ' / ';
-  $footer_message .= l(t('University of New Brunswick'), 'http://www.unb.ca/');
+  $footer_message .= l(t('University of New Brunswick'), 'http://www.unb.ca/') . '. ';
+  $footer_message .= t('All rights reserved') .'.';
   
   return $footer_message;
 }

@@ -100,11 +100,11 @@ div#site-name /* The name of the website */ {
 
 #language-links {
   margin: 0 20px 10px;
-  font-size: .8em;
+  font-size: .85em;
 }
 
 #language-links li {
-  padding: 0 0 0 5px;
+  padding: 0 4px 0 8px;
   border-left: 1px solid #888888;
 }
 
@@ -288,16 +288,15 @@ ul.links li {
  * Footer
  */
 #footer /* Wrapper for footer: secondary links, footer message, and blocks in the footer region */ {
+  font-size: 0.85em;
+  line-height: 1em;
+  text-align: center;
 }
 
 #footer .section {
 }
 
 #footer-message /* Wrapper for the footer message from Drupal's "Site information" */ {
-  /* @todo all #footer? */
-  /* @fixme font size */
-  font-size: 0.9em;
-  text-align: center;  
 }
 
 #footer-messsage .section /* template_preprocess_page() themes separate messages */ {
