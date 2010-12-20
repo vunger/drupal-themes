@@ -100,7 +100,7 @@
 
   <?php if ($terms): ?>
     <div class="meta" style="text-align: right;">
-       <div class="terms terms-inline"><?php print t('related:'); ?> <?php print $terms; ?></div>
+       <div class="terms terms-inline"><?php print t('tags:'); ?> <?php print $terms; ?></div>
     </div>
   <?php endif; ?>
   
