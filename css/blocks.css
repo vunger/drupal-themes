@@ -43,6 +43,10 @@
 #block-aggregator-feed-1 /* Block for the latest news items in the first feed */ {
 }
 
+a.feed-icon img /* hacked feeds block */ {
+  vertical-align: middle;
+}
+
 #block-block-1 /* First administrator-defined block */ {
 }
 
