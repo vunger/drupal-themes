@@ -1,3 +1,7 @@
+body /* drop default line height */ {
+  line-height: 1.4;
+}
+
 /* @group reset the reset */
 :focus {
   outline: #B3B7BE dotted thin;
@@ -23,6 +27,10 @@ a.active {
 }
 
 /* or in "read more" buttons, etc. */
+.node .links ul {
+  margin: 0;
+}
+
 .node .links li a, .node .links li a:visited {
   text-decoration: none;
 }
@@ -120,8 +128,24 @@ a.active {
 /* @end */
 
 /* @group Headings */
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.4em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5, h6 {
+  font-size: 1em;
+}
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
+  margin: 5px 0 0 0;
 }
 /* @end */
 
@@ -153,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navigation li {
-  float: right;
+/*  float: right; */
   border-right: none;
 }
 
@@ -195,15 +219,18 @@ div.item-list ul li {
 /* @end */
 
 /* @group Teasers */
-
+/*
 .node-teaser {
-  margin-bottom: 2em;
-  padding-bottom: 1em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
 }
+*/
 /* @end */
 
 /* @group Meta */
-
+.node .meta p {
+  margin: 5px 0 0 0;
+}
 .node-teaser .meta,
 .with-photo .meta {
   background-image: none;
@@ -224,6 +251,9 @@ div.item-list ul li {
 /* @end */
 
 /* @group Content */
+.node .content /* tighten up whitespace */ {
+  padding: 0.5em 0 0 0;
+}
 .node ul {
   margin: 0 0 15px 35px;
 }
