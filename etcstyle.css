@@ -140,28 +140,33 @@ h1, h2, h3, h4, h5, h6 {
 
 #navigation ul {
   line-height: 30px;
-  opacity: 1.000; /* Fixes bug FF2 with Superfish menus */
 }
 
 #navigation li {
-  border-right: none;
+  border-right: 1px solid #EE3A43;
 }
 
+/* First level links */
 #navigation a,
-#navigation a:visited,
-#navigation a.active {
-  /* @todo: check background */
+#navigation a:visited {
   background: none;
-  color: #fff;
-  /* @todo: check shadow */
+  color: #FFFFFF;
+  padding: 0 1.6em;
   text-shadow: none;
 }
-
+/* First level regular link hover */
+#navigation a:hover,
+#navigation a:visited:hover,
+#navigation .active-trail a.active:hover,
+#navigation .active-trail a:hover {
+  background: transparent url('images/bg-nav-rollover-hover.png') repeat-x 0 100%;
+  /* unb: color: #FFCF00;*/
+}
+/* First level regular link active */
 #navigation .active-trail a,
 #navigation .active-trail a.active {
-  color: #FFF;
+  color: #FFFFFF;
 }
-
 /* @group More Links */
 .more-link a {
   color: #888;
