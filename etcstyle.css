@@ -258,14 +258,15 @@ div.item-list ul li {
 /* @end */
 
 /* @group Views */
+.view-staff-directory table {
+  width: 800px;
+}
 .view-staff-directory td.views-field-title {
   width: 25%;
 }
-
 .view-staff-directory td.views-field-field-telephone-value {
   width: 15%;
 }
-
 .view-staff-directory td.views-field-field-email-value {
   width: 20%;
 }
