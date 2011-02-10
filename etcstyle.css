@@ -261,22 +261,6 @@ div.item-list ul li {
   color: #CA0F18;
   text-shadow: none;
 }
-
-/*
-.node .terms .links li, 
-.node .terms .links li:hover,
-.node .terms .links li:hover a:hover,
-.node .terms .links li:hover a:active {
-  remove text-shadow on taxonomy links
-  text-shadow: none;
-}
-*/
-/*@fixme (?) for now, reset to w/ default link colour 
-.node .terms .links li a:link,
-.node .terms .links li a:visited {
-  color: #CA0F18;
-}
-*/
 /* @end */
 
 /* @group Content */
