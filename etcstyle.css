@@ -190,12 +190,10 @@ div.item-list ul li {
 /* @end */
 
 /* @group Teasers */
-/*
 .node-teaser {
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
+     margin-bottom: 1.5em;
+    padding-bottom: 1em;
 }
-*/
 /* @end */
 
 /* @group Meta */
@@ -238,6 +236,11 @@ div.item-list ul li {
 .node .terms {
   text-align: right;
 }
+
+.node .terms ul.links li.first {
+  margin: 0.25em 0.65em 0.25em 0;
+}
+
 .node .terms ul.links li, 
 .node .terms ul.links li:hover,
 .node .terms ul.links li:hover a,
