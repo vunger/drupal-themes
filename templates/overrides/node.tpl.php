@@ -10,6 +10,7 @@
  */
 ?>
 <div<?php print $node_attributes; ?>>
+  <?php if($submitted || (!$page && $title) || $terms): ?>
     <div class="meta">
       <?php if ($submitted): ?>
       <?php print $picture; ?>
@@ -20,15 +21,17 @@
       <?php if ($submitted): ?>
         <p><?php print $submitted; ?></p>
       <?php endif; ?>
+      <?php if ($terms): ?>
+        <div class="terms">
+          <span class="label">keywords</span>
+          <?php print $terms; ?>
+        </div>
+      <?php endif; ?>
     </div>
+  <?php endif; ?>
   <div class="content clearfix">
     <?php print $content; ?>
   </div>
-  <?php if ($terms): ?>
-    <div class="terms">
-      <?php print $terms; ?>
-    </div>
-  <?php endif; ?>
   <?php if ($links): ?>
     <div class="links">
       <?php print $links; ?>

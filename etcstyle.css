@@ -237,28 +237,46 @@ div.item-list ul li {
 /* @end */
 
 /* @group Terms */
-.node .terms {
-  text-align: right;
+.node .terms .label {
+  display: block;
+  float: left;
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0.1em 1em 0 0;
 }
-
 .node .terms ul.links li.first {
-  margin: 0.25em 0.65em 0.25em 0;
+  margin-left: 0;
 }
-
-.node .terms ul.links li, 
-.node .terms ul.links li:hover,
-.node .terms ul.links li:hover a,
-.node .terms ul.links li:hover a:hover {
-  /* undo text shadowing on taxonomy links */
+.node .terms ul.links li:hover {
   text-shadow: none;
 }
 
-/* @fixme (?) for now, reset to w/ default link colour */
+.node .terms ul.links li a:link,
+.node .terms ul.links li a:visited {
+  color: #333333;
+}
+.node .terms ul.links li:hover a,
+.node .terms ul.links li:hover a:hover,
+.node .terms ul.links li:hover a:active {
+  color: #CA0F18;
+  text-shadow: none;
+}
+
+/*
+.node .terms .links li, 
+.node .terms .links li:hover,
+.node .terms .links li:hover a:hover,
+.node .terms .links li:hover a:active {
+  remove text-shadow on taxonomy links
+  text-shadow: none;
+}
+*/
+/*@fixme (?) for now, reset to w/ default link colour 
 .node .terms .links li a:link,
 .node .terms .links li a:visited {
   color: #CA0F18;
 }
-
+*/
 /* @end */
 
 /* @group Content */
