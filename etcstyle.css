@@ -191,8 +191,8 @@ div.item-list ul li {
 
 /* @group Teasers */
 .node-teaser {
-     margin-bottom: 1.5em;
-    padding-bottom: 1em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
 }
 /* @end */
 
@@ -204,6 +204,8 @@ div.item-list ul li {
 
 .node .meta a:link,
 .node .meta a:visited,
+.block h5 a:link,
+.block h5 a:visited,
 .block .views-field-title a:link,
 .block .views-field-title a:visited {
   border-bottom: 1px dotted #CCCCCC;
@@ -211,6 +213,8 @@ div.item-list ul li {
 }
 .node .meta a:hover,
 .node .meta a:active,
+.block h5 a:hover,
+.block h5 a:active,
 .block .views-field-title a:hover,
 .block .views-field-title a:active {
   border-bottom: 1px dotted #CA0F18;
@@ -245,7 +249,7 @@ div.item-list ul li {
 .node .terms ul.links li:hover,
 .node .terms ul.links li:hover a,
 .node .terms ul.links li:hover a:hover {
-  /*  undo text shadowing on taxonomy links */
+  /* undo text shadowing on taxonomy links */
   text-shadow: none;
 }
 
@@ -254,6 +258,7 @@ div.item-list ul li {
 .node .terms .links li a:visited {
   color: #CA0F18;
 }
+
 /* @end */
 
 /* @group Content */
@@ -264,6 +269,17 @@ div.item-list ul li {
   margin: 0 0 15px 35px;
 }
 /* @end */
+
+/* @group CCK Fields */
+/* @group CCK fields: field_external_links */
+.node .field-field-external-links .links {
+  margin: 0;
+}
+.node .field-field-external-links .links li a {
+  border: none;
+}
+/* @end */
+/* @end 8/
 
 /* @group Views */
 .view-staff-directory table {
