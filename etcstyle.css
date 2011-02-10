@@ -1,4 +1,5 @@
-body /* drop default line height */ {
+body /* replace background & drop default line height */ {
+  background: #898e98 url('images/bg-body.gif') repeat-x left top; */   
   line-height: 1.4;
 }
 
@@ -8,123 +9,100 @@ body /* drop default line height */ {
 }
 /* @end */ 
 
+
 /* @group Links */
-/* underline text links, highlight on mouseover */
-a,
-a:visited {
-  color: #314C74;
-  text-decoration: underline;
-}
-a:hover,
-a.active {
-  background: none repeat scroll 0 0 #FFFFCC;
-  color: #000000;
+/* let's do a full reset on the ETC style.  New code follows */
+a { text-decoration: none; }
+
+a:link, a:visited {
+  border-bottom: 1px dotted #CA0F18;
+  color: #CA0F18;
+  font-weight: 600;
 }
 
-/* but not in the header */
-#header a:hover, #header a.active {
-  background: none repeat scroll 0 0 transparent;
+a:hover, a:active {
+  border-bottom: 1px dotted #CCCCCC;
+  color: #333333;
 }
 
-/* or in "read more" buttons, etc. */
-.node .links ul {
-  margin: 0;
+/* exceptions */
+#header-inner a#logo,           /* header logo */
+ul.links li.node_read_more a,   /* 'read more' links */
+.more-link a {                  /* more-links in blocks */
+  border-bottom: none; 
 }
-
-.node .links li a, .node .links li a:visited {
-  text-decoration: none;
-}
-.node .links li a:hover, .node .links li a.active {
-  background: none repeat scroll 0 0 transparent;
-}  
-
-/* or in pagers */
-.pager a:hover, .pager a.active {
-  background: none repeat scroll 0 0 transparent;
-}
-
-/* or in the footer */
-#footer a {
-  text-decoration: none;
-}
-
-#footer a:hover, #footer a.active {
-  background: none repeat scroll 0 0 transparent;
-  text-decoration: underline;
-}
-/* @end */
 
 /* @group Layout */
 #wrapper {
-  margin-top: 10px;
+  margin-top: 5px;
   min-height: 400px;
   margin-bottom: 50px;
+  /* shrink shadow radius */
+  -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#000000');
+  -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#000000');
 }
-
-#preheader {
-  background: #fff;
-  border: 1px solid #999;
-  border-bottom: solid 2px #095f95;
-  margin:0px;
-  padding:0px;
-  height: 28px;
-}
-/* @end */
 
 /* @group Header */
 #header {
-  background: #3A4E6A url('images/header_top2.jpg') no-repeat top left !important;
-  height: 71px !important;
+  /* set properties individually; allow transparent? */
+  background: url('images/bg-header-top.jpg') no-repeat 0 0 !important;
+  height: 87px !important;
+  border-bottom: 1px solid #FFFFFF;
+}
+#header #logo img {
+  margin: 5px 5px 5px 15px;
 }
 
-#header #logo img {
-  margin: 15px;
+/* @group Header: secondary navigation */
+ul.secondary-links {
+  float: right;
+  margin: 10px 10px 0 0;
+}
+ul.secondary-links li {
+  display: inline;
+  padding: 0 10px 0 16px;
+  border-left: 1px solid #FFFFFF;
+}
+ul.secondary-links li.first {
+  border-left: none;
+}
+ul.secondary-links a:link, 
+ul.secondary-links a:visited {
+  color: #FFFFFF;
+  border-bottom: none;
+}
+ul.secondary-links a:hover,
+ul.secondary-links a.active {
+  border-bottom: 1px dotted #FFFFFF;
 }
 /* @end */
 
 /* @group Footer */
 #footer {
-  background: rgb(53,53,53);
-  border-bottom: solid 2px #095f95;
+  border-bottom: 1px solid #CC0000;
   min-height: 28px;
   padding: 0px;
   margin: 0px;
+  color: #FFFFFF;
 }
-
 #footer-inner {
   background: rgb(53,53,53);
   padding: 1em;
-  color: #FFF;
-  font-weight: bold;
   text-align: left;
 }
 
-#footer-inner a,
-#footer-inner a:visited {
-  color: #FFF;
-  font-weight: bold;
+#footer a:link, #footer a:visited {
+  color: #FFFFFF;
+  border-bottom: none;
 }
+#footer a:hover, #footer a:active {
+  border-bottom: 1px dotted #FFFFFF;
+}
+/* @end */
 
-#footer-inner .block {
-  float: right;
-  margin: 0;
-}
-
-#footer-inner ul.menu {
-  border: none;
-}
-
-#footer-inner ul.menu li {
-  display: inline;
-  float: right;
-}
-
-#footer-inner ul.menu li a {
-  padding: 0 1em;
-  background-color: transparent;
-  text-shadow: none;
-  border: none;
-}
 /* @end */
 
 /* @group Headings */
@@ -145,39 +123,27 @@ h5, h6 {
 }
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0;
-  margin: 5px 0 0 0;
+  margin: 5px 0 10px 0;
 }
 /* @end */
 
-#prenavigation ul {
-  line-height: 28px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 998;
-  opacity: 1.00; /* Fixes bug FF2 with Superfish menus */
-  border: none;
-  position: relative;
+/* @group Titles, from a variety of sources */
+#main .title { 
+  color: #CA0F18;
 }
-
-#prenavigation li {
-  color: #095f95;
-  float: right;
-  margin-right:15px;
-}
+/* @end */
 
 #navigation {
-  background: #fff url('images/header_bottom.jpg') no-repeat bottom left;
-  height: 28px;
+  background: #FFFFFF url('images/bg-header-bottom.jpg') no-repeat 0 0;
+  height: 31px;
 }
 
 #navigation ul {
-  line-height: 28px;
+  line-height: 30px;
   opacity: 1.000; /* Fixes bug FF2 with Superfish menus */
 }
 
 #navigation li {
-/*  float: right; */
   border-right: none;
 }
 
@@ -228,6 +194,26 @@ div.item-list ul li {
 /* @end */
 
 /* @group Meta */
+/* @todo: keep this? or revert to link defaults? */
+.node .meta a {
+  font-weight: 400;
+}
+
+.node .meta a:link,
+.node .meta a:visited,
+.block .views-field-title a:link,
+.block .views-field-title a:visited {
+  border-bottom: 1px dotted #CCCCCC;
+  color: #333333;
+}
+.node .meta a:hover,
+.node .meta a:active,
+.block .views-field-title a:hover,
+.block .views-field-title a:active {
+  border-bottom: 1px dotted #CA0F18;
+  color: #CA0F18;
+}
+
 .node .meta p {
   margin: 5px 0 0 0;
 }
@@ -247,7 +233,19 @@ div.item-list ul li {
 .node .terms {
   text-align: right;
 }
+.node .terms ul.links li, 
+.node .terms ul.links li:hover,
+.node .terms ul.links li:hover a,
+.node .terms ul.links li:hover a:hover {
+  /*  undo text shadowing on taxonomy links */
+  text-shadow: none;
+}
 
+/* @fixme (?) for now, reset to w/ default link colour */
+.node .terms .links li a:link,
+.node .terms .links li a:visited {
+  color: #CA0F18;
+}
 /* @end */
 
 /* @group Content */
@@ -260,7 +258,6 @@ div.item-list ul li {
 /* @end */
 
 /* @group Views */
-
 .view-staff-directory td.views-field-title {
   width: 25%;
 }

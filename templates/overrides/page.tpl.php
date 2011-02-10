@@ -22,14 +22,10 @@
   <?php if (!empty($admin)) print $admin; // support for: http://drupal.org/project/admin ?>
 
   <div id="wrapper">
-
-<div id="preheader">
-<?php if ($secondary_links): ?>
-      <div id="prenavigation"><?php print theme('links',$secondary_links); ?></div>
-    <?php endif; ?>
-</div>
-
     <div<?php print $header_attributes; ?>>
+      <?php if ($secondary_links): ?>
+        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
+      <?php endif; ?>
       <div id="header-inner">
         <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print variable_get('site_name', ''); ?>" id="logo"><img src="<?php print $logo; ?>" alt="<?php print variable_get('site_name', ''); ?>" /></a>
@@ -40,11 +36,6 @@
         <?php if ($site_slogan): ?>
           <span id="site-slogan"><?php print $site_slogan; ?></span>
         <?php endif; ?>
-<!--        
-      	<div style='float:right; margin:15px;'>
-      		<img src="/sites/vre.lib.unb.ca.etc/themes/etcdrupal/images/unb-libraries-logo.png"/>
-      	</div>
--->      	
       </div>
     </div>
     <?php if ($primary_links): ?>
@@ -105,7 +96,7 @@
     <div class="push">&nbsp;</div>
     <div id="footer" class="layout-region">
       <div id="footer-inner">
-        <?php print $footer; ?>
+        <?php print $contentfooter; ?>
         <?php print $footer_message; ?>
       </div>
     </div>
