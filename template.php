@@ -54,3 +54,36 @@ function etcdrupal_breadcrumb($breadcrumb) {
     return '<div class="breadcrumb">'. implode(' | ', $breadcrumb) .'</div>';
   }
 }
+
+/**
+ * Restyle the theme-configurable search box
+ *
+ * @param $vars
+ *  An array of variables to pass to the theme template
+ */
+function etcdrupal_preprocess_search_theme_form(&$vars) {
+  // Remove block title
+  unset($vars['form']['search_theme_form']['#title']);
+  
+  // Remove title displayed on textfield mouseover
+  unset($vars['form']['search_theme_form']['#attributes']['title']);
+  
+  // Get a language-appropriate default value for the search box
+  $default_text = t('Search');
+
+  // Set the default value:
+  $vars['form']['search_theme_form']['#value'] = $default_text;
+  
+  // .. and add handlers to clear the default on blur/focus
+  $vars['form']['search_theme_form']['#attributes'] = array(
+    'onblur'  => "clearInput('edit-search-theme-form-1', '$default_text')",
+    'onfocus' => "clearInput('edit-search-theme-form-1', '$default_text')",
+  );
+  
+  // Re-render the textfield
+  unset($vars['form']['search_theme_form']['#printed']);
+  $vars['search']['search_theme_form'] = drupal_render($vars['form']['search_theme_form']);
+
+  // Collect all form elements to print entire form
+  $vars['search_form'] = implode($vars['search']);
+}

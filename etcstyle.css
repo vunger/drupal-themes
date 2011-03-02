@@ -35,7 +35,7 @@ ul.links li.node_read_more a,   /* 'read more' links */
 /* @group Layout */
 #wrapper {
   margin-top: 5px;
-  min-height: 400px;
+  min-height: 350px;
   margin-bottom: 50px;
   /* shrink shadow radius */
   -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
@@ -80,26 +80,87 @@ ul.secondary-links a.active {
 }
 /* @end */
 
+/* @group Header: search box */
+#search-box {
+  float: right;
+  clear: right;
+}
+#search-box input {
+  border: 1px solid #CCCCCC;
+  padding-left: 0;
+}
+
+#search-box #edit-search-theme-form-1 {
+  background: url('images/search_grey.gif') no-repeat scroll 0 center transparent;
+  color: #CCCCCC;
+  margin: 10px 20px 5px 0;
+  padding: 3px 0 2px 17px;
+  width: 125px;
+}
+
+#search-box #edit-search-theme-form-1:hover {
+  color: #FFFFFF;
+}
+/* @end */
+
 /* @group Footer */
 #footer {
   border-bottom: 1px solid #CC0000;
-  min-height: 28px;
+  background: rgb(53,53,53);
   padding: 0px;
   margin: 0px;
   color: #FFFFFF;
 }
 #footer-inner {
   background: rgb(53,53,53);
-  padding: 1em;
+  padding: 1.2em;
   text-align: left;
 }
-
 #footer a:link, #footer a:visited {
   color: #FFFFFF;
   border-bottom: none;
 }
 #footer a:hover, #footer a:active {
   border-bottom: 1px dotted #FFFFFF;
+}
+
+/* @group footer logos */
+div#unb {
+  background: url('images/bg-footer-logo-unb.png') no-repeat scroll 0 center transparent;
+  float: right;
+  height: 36px;
+  width: 36px;    
+  margin: 4px 20px 0;
+  padding: 0;
+
+}
+
+div#unb-libraries {
+  background: url('images/bg-footer-logo-unb-libraries.png') no-repeat scroll 0 center transparent;
+  float: right;
+  height: 36px;
+  width: 158px;    
+  margin: 6px 0 2px;
+  padding: 0;
+}
+
+#footer div.footer-logo a {
+  border-bottom: none;
+  display: block;
+  text-indent: -9999px;
+}
+#footer div.footer-logo a:link, 
+#footer div.footer-logo a:visited,
+#footer div.footer-logo a:hover,
+#footer div.footer-logo a:active { border-bottom: none; }
+
+#footer div#unb a {
+  height: 36px;
+  width: 36px;
+}
+#footer div#unb-libraries a {
+  height: 36px;
+  width: 158px;
 }
 /* @end */
 

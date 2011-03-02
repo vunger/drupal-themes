@@ -6,4 +6,13 @@ base theme = sky
 
 stylesheets[all][] = etcstyle.css
 
+; Custom content regions are not inherited by sub-themes
+; @todo check this 
+regions[left] = Left sidebar
+regions[right] = Right sidebar
+regions[contenttop] = Content top
+regions[contentbottom] = Content bottom
+regions[contentfooter] = Content footer
 
+; A wee bit of JavaScript
+scripts[] = js/script.js

@@ -26,6 +26,9 @@
       <?php if ($secondary_links): ?>
         <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
       <?php endif; ?>
+      <?php if ($search_box): ?>
+        <div id="search-box"><?php print $search_box; ?></div>
+      <?php endif; ?>
       <div id="header-inner">
         <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print variable_get('site_name', ''); ?>" id="logo"><img src="<?php print $logo; ?>" alt="<?php print variable_get('site_name', ''); ?>" /></a>
@@ -95,7 +98,10 @@
     <!-- END CONTAINER -->
     <div class="push">&nbsp;</div>
     <div id="footer" class="layout-region">
+      <div id="unb" class="footer-logo"><a href="http://www.unb.ca/">UNB</a></div>
+      <div id="unb-libraries" class="footer-logo"><a href="http://lib.unb.ca/">LIB</a></div>
       <div id="footer-inner">
+        <!-- <div id="unb-libraries"><a href="http://lib.unb.ca/">UNB Libraries</a></div> -->
         <?php print $contentfooter; ?>
         <?php print $footer_message; ?>
       </div>
