@@ -102,6 +102,11 @@ ul.secondary-links a.active {
 #search-box #edit-search-theme-form-1:hover {
   color: #FFFFFF;
 }
+
+#search-box #edit-search-theme-form-1-wrapper label {
+  /* Keep label for screen readers */
+  text-indent: -9999px;
+}
 /* @end */
 
 /* @group Footer */

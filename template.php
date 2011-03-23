@@ -62,14 +62,15 @@ function etcdrupal_breadcrumb($breadcrumb) {
  *  An array of variables to pass to the theme template
  */
 function etcdrupal_preprocess_search_theme_form(&$vars) {
-  // Remove block title
-  unset($vars['form']['search_theme_form']['#title']);
   
   // Remove title displayed on textfield mouseover
   unset($vars['form']['search_theme_form']['#attributes']['title']);
   
   // Get a language-appropriate default value for the search box
   $default_text = t('Search');
+  
+  // Shorter block title
+  $vars['form']['search_theme_form']['#title'] = $default_text;
 
   // Set the default value:
   $vars['form']['search_theme_form']['#value'] = $default_text;
